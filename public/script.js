@@ -22,7 +22,7 @@ const startTimer = (mins) => {
 
     interval = setInterval(() => {
         currentSeconds = Date.now()/1000;
-        seconds = Math.max(0, finalSeconds - currentSeconds);
+        seconds = Math.round(Math.max(0, finalSeconds - currentSeconds));
         timerElement.innerText = `${Math.floor(seconds/60)}:${seconds%60}`
 
         if(seconds <= 0) {
