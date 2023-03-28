@@ -17,9 +17,12 @@ const startTimer = (mins) => {
         return;
     }
     let seconds = 60 * mins;
+    let currentSeconds = Date.now()/1000;
+    const finalSeconds = currentSeconds + seconds;
 
     interval = setInterval(() => {
-        seconds = seconds - 1;
+        currentSeconds = Date.now()/1000;
+        seconds = Math.max(0, finalSeconds - currentSeconds);
         timerElement.innerText = `${Math.floor(seconds/60)}:${seconds%60}`
 
         if(seconds <= 0) {
