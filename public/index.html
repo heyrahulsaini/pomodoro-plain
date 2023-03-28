@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="generator" content="GitLab Pages">
-    <title>Plain HTML site using GitLab Pages</title>
+    <title>Pomodoro Plain</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div class="navbar">
-      <a href="https://pages.gitlab.io/plain-html/">Plain HTML Example</a>
-      <a href="https://gitlab.com/pages/plain-html/">Repository</a>
-      <a href="https://gitlab.com/pages/">Other Examples</a>
+    <div>
+      <!-- TODO: Show current timer status -->
+      <h1 id="timer">00:00</h1>
     </div>
-
-    <h1>Hello World!</h1>
-
-    <p>
-      This is a simple plain-HTML website on GitLab Pages, without any fancy static site generator.
-    </p>
+    <div id="history">
+      <!-- TODO: Show history here -->
+    </div>
+    <div>
+      <div>
+        <button id="5min">5 min</button>
+        <button id="25min">25 min</button>
+        <button id="15min">15 min</button>
+      </div>
+      <div>
+        <button id="52min">52 min</button>
+        <button id="17min">17 min</button>
+        <button id="38min">38 min</button>
+      </div>
+    </div>
+    <script src="./script.js"></script>
   </body>
 </html>
 
