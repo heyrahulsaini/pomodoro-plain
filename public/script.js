@@ -10,8 +10,14 @@ let interval;
 
 const startTimer = (mins) => {
     const timerElement = document.getElementById('timer');
-    let seconds = 60 * mins;
     clearInterval(interval);
+
+    mins = Number(mins);
+    if(isNaN(mins)) {
+        return;
+    }
+    let seconds = 60 * mins;
+
     interval = setInterval(() => {
         seconds = seconds - 1;
         timerElement.innerText = `${Math.floor(seconds/60)}:${seconds%60}`
