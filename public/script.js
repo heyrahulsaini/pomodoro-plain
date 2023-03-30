@@ -8,6 +8,8 @@ const extraAudio = new Audio('media/extra.mp3');
 
 let interval;
 
+const twoDigits = (num) => ('0' + num).slice(-2);
+
 const startTimer = (mins) => {
     const timerElement = document.getElementById('timer');
     const historyElement = document.getElementById('history');
@@ -24,7 +26,7 @@ const startTimer = (mins) => {
     interval = setInterval(() => {
         currentSeconds = Date.now()/1000;
         seconds = Math.round(Math.max(0, finalSeconds - currentSeconds));
-        timerElement.innerText = `${Math.floor(seconds/60)}:${seconds%60}`
+        timerElement.innerText = `${twoDigits(Math.floor(seconds/60))}:${twoDigits(seconds%60)}`
 
         if(breakIntervals.includes(mins)) {
             historyElement.innerText += '^';
