@@ -10,6 +10,7 @@ let interval;
 
 const startTimer = (mins) => {
     const timerElement = document.getElementById('timer');
+    const historyElement = document.getElementById('history');
     clearInterval(interval);
 
     mins = Number(mins);
@@ -24,6 +25,12 @@ const startTimer = (mins) => {
         currentSeconds = Date.now()/1000;
         seconds = Math.round(Math.max(0, finalSeconds - currentSeconds));
         timerElement.innerText = `${Math.floor(seconds/60)}:${seconds%60}`
+
+        if(breakIntervals.includes(mins)) {
+            historyElement.innerText += '^';
+        } else if(gameIntervals.includes(mins)) {
+            historyElement.innerText += '*';
+        }
 
         if(seconds <= 0) {
             if(breakIntervals.includes(mins)) {
