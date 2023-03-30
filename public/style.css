@@ -1,3 +1,7 @@
 #history {
     overflow-wrap: anywhere;
 }
+
+a {
+    color: black;
+}
