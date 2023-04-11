@@ -29,9 +29,9 @@ const startTimer = (mins) => {
         timerElement.innerText = `${twoDigits(Math.floor(seconds/60))}:${twoDigits(seconds%60)}`
 
         if(breakIntervals.includes(mins)) {
-            historyElement.innerText += '^';
+            historyElement.innerText += '💤';
         } else if(gameIntervals.includes(mins)) {
-            historyElement.innerText += '*';
+            historyElement.innerText += '💪';
         }
 
         if(seconds <= 0) {
