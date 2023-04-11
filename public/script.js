@@ -6,7 +6,13 @@ const breakAudio = new Audio('media/break.wav');
 const extraAudio = new Audio('media/extra.mp3');
 
 
+const cancelElement = document.getElementById('cancel');
+
 let interval;
+
+cancelElement.addEventListener('click', () => {
+    clearInterval(interval);
+})
 
 const twoDigits = (num) => ('0' + num).slice(-2);
 
