@@ -16,9 +16,21 @@ cancelElement.addEventListener('click', () => {
 
 const twoDigits = (num) => ('0' + num).slice(-2);
 
+const historyElement = document.getElementById('history');
+const appendHistory = (emoji) => {
+    historyElement.innerText = emoji + historyElement.innerText;
+    localStorage.history = historyElement.innerText;
+}
+const restoreHistory = () => {
+    if(localStorage.history)
+        historyElement.innerText = localStorage.history;
+    else
+        localStorage.history = '';
+}
+restoreHistory();
+
 const startTimer = (mins) => {
     const timerElement = document.getElementById('timer');
-    const historyElement = document.getElementById('history');
     clearInterval(interval);
 
     mins = Number(mins);
@@ -35,9 +47,9 @@ const startTimer = (mins) => {
         timerElement.innerText = `${twoDigits(Math.floor(seconds/60))}:${twoDigits(seconds%60)}`
 
         if(breakIntervals.includes(mins)) {
-            historyElement.innerText += '💤';
+            appendHistory('💤');
         } else if(gameIntervals.includes(mins)) {
-            historyElement.innerText += '💪';
+            appendHistory('💪');
         }
 
         if(seconds <= 0) {
