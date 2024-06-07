@@ -17,21 +17,24 @@
       <!-- TODO: Show current timer status -->
       <h1 id="timer">00:00</h1>
     </div>
-    <div>
-      <div>
-        <button id="5min">5 min</button>
-        <button id="25min">25 min</button>
-        <button id="15min">15 min</button>
-      </div>
-      <div>
-        <button id="17min">17 min</button>
-        <button id="52min">52 min</button>
-        <button id="38min">38 min</button>
-      </div>
-      <div>
-        <button id="cancel">Cancel</button>
-      </div>
-    </div>
+    <table>
+    	<tr>
+        	<th> Rest </th>
+            <th> Long Rest </th>
+            <th> Focus </th>
+        </tr>
+      <tr>
+        <td><button id="5min">5 min</button></td>
+        <td><button id="15min">15 min</button></td>
+        <td><button id="25min">25 min</button></td>
+      </tr>
+      <tr>
+        <td><button id="17min">17 min</button></td>
+        <td><button id="38min">38 min</button></td>
+        <td><button id="52min">52 min</button></td>
+      </tr>
+    </table>
+    <button id="cancel">Cancel</button>
     <br>
     <div id="history">
       <!-- TODO: Show history here -->
